@@ -1,7 +1,7 @@
-.logo {
-  font-size: 2rem;
-  font-weight: bold;
-  padding-right: 10px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 /* GENERAL STYLES */
 body {
@@ -12,7 +12,8 @@ body {
   background-attachment: fixed; /* Make background stay in place */
   margin: 0;
   padding: 0;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Arial', sans-serif;
+   color: white;
 }
 
 body::before {
@@ -26,33 +27,34 @@ body::before {
 }
 
 header {
-    background-color: #f7f7f7;
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
+  padding: 30px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 nav img {
-    height: 80px;
-    width: auto;
+    width: 150px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 40px;
 }
 
 nav li a {
     text-decoration: none;
     color: white;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 14px;
 }
 
 .logo {
@@ -61,8 +63,43 @@ nav li a {
 }
 
 /* MAIN SECTIONS */
-main section {
-    padding: 40px 20px;
+main section:first-of-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 20px 60px;
+  text-align: center;
+}
+
+main section:first-of-type h1 {
+  font-size: 64px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+main section:first-of-type span {
+  font-size: 16px;
+  margin: 0 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+main section:first-of-type button {
+  margin-top: 30px;
+  padding: 12px 32px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: #C271FF;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+main section:first-of-type button:hover {
+  background-color: #a455d4;
 }
 
 h1, h2, h3 {
@@ -138,3 +175,151 @@ footer i {
     color: white;
     font-size: 18px;
 }
+.quote-section {
+  background-color: #C271FF;
+  padding: 60px 20px;
+  color: white;
+  text-align: left;
+}
+
+.quote-container {
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.quote-container img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.quote-content {
+  max-width: 700px;
+}
+
+.quote-text {
+  font-size: 22px;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.quote-author {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0;
+}
+
+.quote-role {
+  font-size: 14px;
+  font-style: italic;
+  opacity: 0.9;
+  margin-top: 5px;
+}
+
+.videos {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.videos h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #071629;
+}
+
+.videos .highlight {
+  color: #C271FF;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-card {
+  text-align: left;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  padding-bottom: 20px;
+}
+
+.video-thumb {
+  position: relative;
+}
+
+.video-thumb img {
+  width: 100%;
+  display: block;
+  border-radius: 8px 8px 0 0;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #C271FF url('./assets/play-icon.png') center center no-repeat;
+  background-size: 40%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.video-card h3 {
+  margin: 15px 15px 5px;
+  font-size: 18px;
+  color: #071629;
+}
+
+.video-card p {
+  margin: 0 15px 10px;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.video-meta {
+  display: flex;
+  align-items: center;
+  margin: 10px 15px;
+}
+
+.video-meta img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.video-meta .author {
+  color: #C271FF;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.video-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.stars {
+  color: #C271FF;
+}
+
+.duration {
+  font-size: 14px;
+  color: #6c757d;
+}
+
